@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <rechner></rechner>
+    <Rechner/>
   </div>
 </template>
 
@@ -27,7 +27,7 @@
 }
 </style>
 <script>
-  import Rechner from "./views/rechner";
+  import Rechner from "./views/Rechner";
   export default {
     components: {Rechner}
   }
