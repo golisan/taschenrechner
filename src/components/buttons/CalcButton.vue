@@ -1,14 +1,16 @@
 <template>
-  <button @click="ClickButton($event)" class="button">{{ text }}</button>
+  <button  class="button">{{ text }}</button>
 </template>
 
 <script>
 export default {
   name: "CalcButton",
-  props: { text: String, btntype: String },
+  props: { text: String},
   methods: {
+    // eslint-disable-next-line no-unused-vars
     ClickButton(event) {
-      console.log(event.currentTarget.text);
+
+      console.log("CalcButton.vue");
 
     }
   }

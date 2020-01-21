@@ -3,26 +3,26 @@
     <div class="grid-container">
         <div class="grid-display"><input v-model = "ergebnis" class="result" type="text" name="Ergebnis" readonly></div>
         <div class="grid-rechnung"><input v-model ="rechnung" class="rechnung" name="Rechnung"  readonly></div>
-        <div class="grid-item"><CalcButton text="CE" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="C" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="<" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="/" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="7" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="8" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="9" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="*" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="4" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="5" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="6" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="-" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="1" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="2" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="3" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="+" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="+/-" btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="0" btntype="1"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="," btntype="2"></CalcButton></div>
-        <div class="grid-item"><CalcButton text="=" btntype="2"></CalcButton></div>
+        <div class="grid-item"><CalcButton text="CE"  @click="ClickButton($event)" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="C" > @click="ClickButton($event)" </CalcButton></div>
+        <div class="grid-item"><CalcButton text="<" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="/" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="7" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="8" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="9" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="*" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="4" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="5" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="6" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="-" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="1" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="2" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="3" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="+" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="+/-" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="0" ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="," ></CalcButton></div>
+        <div class="grid-item"><CalcButton text="=" ></CalcButton></div>
     </div>
     </div>
 </template>
@@ -40,6 +40,14 @@
                 zahl: globalStore.gZahl,
                 op: globalStore.gOp,
                 rechnung: globalStore.gRechnung
+
+            }
+        },
+        methods: {
+            // eslint-disable-next-line no-unused-vars
+            ClickButton(event) {
+
+                console.log("Rechner.vue");
 
             }
         }
