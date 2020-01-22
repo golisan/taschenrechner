@@ -203,11 +203,11 @@ export default {
       globals,
       ergebnis: 0,
       rechnung: "",
-      value: 0
+      value: 0,
+      OpActive: false
     };
   },
   methods: {
-    // eslint-disable-next-line no-unused-vars
     CalcButtonClick(event) {
       let type = event.target.getAttribute("type");
       let op = event.target.getAttribute("op");
@@ -222,8 +222,13 @@ export default {
           if (this.ergebnis.toString() === "0") {
             this.ergebnis = this.value;
           } else {
-            this.ergebnis = this.ergebnis + this.value;
+            if (this.OpActive) {
+              this.ergebnis = this.value
+            } else {
+              this.ergebnis = this.ergebnis + this.value;
+            }
           }
+
           break;
 
         case globals.BTNTYPE.FUNKTION.toString():
@@ -234,18 +239,27 @@ export default {
               this.ergebnis = "0";
               this.rechnung = "";
               this.value = 0;
+              this.OpActive = false;
               break;
             case globals.OP.C.toString():
               console.log("C");
               this.ergebnis = "0";
               this.value = 0;
               break;
+            case globals.OP.EQUALS.toString():
+              console.log("=");
+              this.ergebnis = this.ergebnis
+              this.rechnung = "";
+              this.value = 0;
+              break;
             case globals.OP.PLUS.toString():
               console.log("+");
+              this.OpActive = true;
               this.rechnung = this.rechnung + this.ergebnis + "+"
               break;
             case globals.OP.MINUS.toString():
               console.log("-");
+              this.OpActive = true;
               this.rechnung = this.rechnung + this.ergebnis + "-"
               break;
             default:
