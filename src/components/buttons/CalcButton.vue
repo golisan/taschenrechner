@@ -3,11 +3,11 @@
 </template>
 
 <script>
-  import {globals} from "../../common/globals.js";
-//import {globalStore} from '../../main.js';
-  export default {
+import { globals } from "../../common/globals.js";
+
+export default {
   name: "CalcButton",
-  props: { text: String, btnType: globals.BTNTYPE },
+  props: { text: String, btn_type: globals.BTNTYPE },
   methods: {
     // eslint-disable-next-line no-unused-vars
     onClick(event) {

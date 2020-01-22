@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <div class="grid-container">
       <div class="grid-display">
@@ -14,11 +15,7 @@
         <input v-model="rechnung" class="rechnung" name="Rechnung" readonly />
       </div>
       <div class="grid-item">
-        <CalcButton
-          text="CE"
-          :btntype="globals.BTNTYPE.FUNKTION"
-          @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        <CalcButton text="CE" :btn_type="globals.BTNTYPE.FUNKTION" @calc-button-click="CalcButtonClick"/>
       </div>
       <div class="grid-item">
         <CalcButton text="C" @calc-button-click="CalcButtonClick"> </CalcButton>
@@ -85,22 +82,21 @@
 </template>
 
 <script>
-    // eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
 import { globals } from "../common/globals.js";
-import { globalStore } from "../main.js";
+import { globalStore } from "../common/globals.js";
 import CalcButton from "../components/buttons/CalcButton";
 
 export default {
   name: "Rechner",
   components: { CalcButton },
   data: function() {
-      return {
-          ergebnis: globalStore.gErgebnis,
-          zahl: globalStore.gZahl,
-          op: globalStore.gOp,
-          rechnung: globalStore.gRechnung,
-          test : globals.BTNTYPE.FUNKTION
-      };
+    return {
+      ergebnis: globalStore.gErgebnis,
+      zahl: globalStore.gZahl,
+      op: globalStore.gOp,
+      rechnung: globalStore.gRechnung
+    };
   },
   methods: {
     // eslint-disable-next-line no-unused-vars
