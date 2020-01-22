@@ -240,10 +240,20 @@ export default {
               this.ergebnis = "0";
               this.value = 0;
               break;
+            case globals.OP.PLUS.toString():
+              console.log("+");
+              this.rechnung = this.rechnung + this.ergebnis + "+"
+              break;
+            case globals.OP.MINUS.toString():
+              console.log("-");
+              this.rechnung = this.rechnung + this.ergebnis + "-"
+              break;
             default:
               break;
           }
           break;
+
+
 
 
         default:
