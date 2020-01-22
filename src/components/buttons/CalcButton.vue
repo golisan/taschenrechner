@@ -1,17 +1,18 @@
 <template>
-  <button  class="button">{{ text }}</button>
+  <button class="button" @click="onClick($event)">{{ text }}</button>
 </template>
 
 <script>
-export default {
+  import {globals} from "../../common/globals.js";
+//import {globalStore} from '../../main.js';
+  export default {
   name: "CalcButton",
-  props: { text: String},
+  props: { text: String, btnType: globals.BTNTYPE },
   methods: {
     // eslint-disable-next-line no-unused-vars
-    ClickButton(event) {
-
-      console.log("CalcButton.vue");
-
+    onClick(event) {
+      console.log("->CalcButton.vue");
+      this.$emit("calc-button-click", event);
     }
   }
 };
