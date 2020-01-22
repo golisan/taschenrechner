@@ -15,7 +15,7 @@
         <input v-model="rechnung" class="rechnung" name="Rechnung" readonly />
       </div>
       <div class="grid-item">
-        <CalcButton text="CE" :btn_type="globals.BTNTYPE.FUNKTION" @calc-button-click="CalcButtonClick"/>
+        <CalcButton text="CE" :type="globals.BTNTYPE.FUNKTION" :op="globals.OP.CE"   @calc-button-click="CalcButtonClick"/>
       </div>
       <div class="grid-item">
         <CalcButton text="C" @calc-button-click="CalcButtonClick"> </CalcButton>
@@ -102,7 +102,14 @@ export default {
     // eslint-disable-next-line no-unused-vars
     CalcButtonClick(event) {
       console.log("Rechner.vue");
-      console.log(event.target.value);
+      console.log( event.target.getAttribute('type'));
+      console.log( event.target.getAttribute('op'));
+      console.log( globals.OP.CE);
+      let op = event.target.getAttribute('op')
+      if(op === globals.OP.CE){
+        console.log("ja");
+
+      }
     }
   }
 };
