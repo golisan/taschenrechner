@@ -202,7 +202,6 @@ export default {
   data: function() {
     return {
       globals,
-      //    math,
       ergebnis: 0,
       rechnung: "",
       value: 0,
@@ -211,14 +210,14 @@ export default {
   },
   methods: {
     CalcButtonClick(event) {
-      let type = event.target.getAttribute("type");
-      let op = event.target.getAttribute("op");
-      if (type.toString() === globals.BTNTYPE.ZAHL.toString()) {
+      let type = parseInt(event.target.getAttribute("type"));
+      let op = parseInt(event.target.getAttribute("op"));
+      if (type === globals.BTNTYPE.ZAHL) {
         this.value = event.target.getAttribute("value");
         console.log("Hole neuen Value: " + this.value);
       }
-      switch (type.toString()) {
-        case globals.BTNTYPE.ZAHL.toString():
+      switch (type) {
+        case globals.BTNTYPE.ZAHL:
           console.log("Zahl wurde gedrückt");
           if (this.ergebnis.toString() === "0") {
             this.ergebnis = this.value;
@@ -232,49 +231,49 @@ export default {
           }
 
           break;
-        case globals.BTNTYPE.FUNKTION.toString():
+        case globals.BTNTYPE.FUNKTION:
           console.log("Funktion wurde gedrückt");
-          switch (op.toString()) {
+          switch (op) {
             case globals.OP.CE.toString():
               console.log("CE");
               this.ergebnis = "0";
               this.value = 0;
               this.OpActive = false;
               break;
-            case globals.OP.C.toString():
+            case globals.OP.C:
               console.log("C");
               this.ergebnis = "0";
               this.rechnung = "";
               this.value = 0;
               break;
-            case globals.OP.EQUALS.toString():
+            case globals.OP.EQUALS:
               console.log("=");
               this.rechnung = this.rechnung + this.ergebnis;
               this.ergebnis = math.evaluate(this.rechnung);
               this.rechnung = "";
               this.value = 0;
               break;
-            case globals.OP.PLUS.toString():
+            case globals.OP.PLUS:
               console.log("+");
               this.OpActive = true;
               this.rechnung = this.rechnung + this.ergebnis + "+";
               break;
-            case globals.OP.MINUS.toString():
+            case globals.OP.MINUS:
               console.log("-");
               this.OpActive = true;
               this.rechnung = this.rechnung + this.ergebnis + "-";
               break;
-            case globals.OP.MAL.toString():
+            case globals.OP.MAL:
               console.log("*");
               this.OpActive = true;
               this.rechnung = this.rechnung + this.ergebnis + "*";
               break;
-            case globals.OP.GETEILT.toString():
+            case globals.OP.GETEILT:
               console.log("/");
               this.OpActive = true;
               this.rechnung = this.rechnung + this.ergebnis + "/";
               break;
-            case globals.OP.MINUSSIGN.toString():
+            case globals.OP.MINUSSIGN:
               console.log("/");
               this.ergebnis = this.ergebnis * -1;
               break;
