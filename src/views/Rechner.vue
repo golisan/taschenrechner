@@ -2,16 +2,20 @@
   <div>
     <div class="grid-container">
       <div class="grid-display">
-        <input
-          :value="ergebnis"
-          class="result"
-          type="text"
-          name="Ergebnis"
-          readonly
-        />
+        <label>
+          <input
+            :value="ergebnis"
+            class="result"
+            type="text"
+            name="Ergebnis"
+            readonly
+          />
+        </label>
       </div>
       <div class="grid-rechnung">
-        <input v-model="rechnung" class="rechnung" name="Rechnung" readonly />
+        <label>
+          <input v-model="rechnung" class="rechnung" name="Rechnung" readonly />
+        </label>
       </div>
       <div class="grid-item">
         <CalcButton
@@ -27,8 +31,7 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.C"
           @calc-button-click="CalcButtonClick"
-        >
-        </CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
@@ -36,7 +39,7 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.B"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
@@ -44,34 +47,34 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.GETEILT"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="7"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="7"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="8"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="8"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="9"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :oop="globals.OP.NOOP"
           :value="9"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
@@ -79,34 +82,34 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.MAL"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="4"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="4"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="5"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="5"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="6"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="6"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
@@ -114,34 +117,34 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.MINUS"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="1"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="1"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="2"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="2"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="3"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="3"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
@@ -149,7 +152,7 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.PLUS"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
@@ -157,42 +160,40 @@
           :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.MINUSSIGN"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="0"
-          :type="1"
+          :type="globals.BTNTYPE.ZAHL"
           :op="globals.OP.NOOP"
           :value="0"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text=","
-          :type="2"
+          :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.POINT"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
       <div class="grid-item">
         <CalcButton
           text="="
-          :type="2"
+          :type="globals.BTNTYPE.FUNKTION"
           :op="globals.OP.EQUALS"
           @calc-button-click="CalcButtonClick"
-        ></CalcButton>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
 import { globals } from "../common/globals.js";
-// eslint-disable-next-line no-unused-vars
-import { globalStore } from "../common/globals.js";
+import * as math from "mathjs";
 import CalcButton from "../components/buttons/CalcButton";
 
 export default {
@@ -201,6 +202,7 @@ export default {
   data: function() {
     return {
       globals,
+      //    math,
       ergebnis: 0,
       rechnung: "",
       value: 0,
@@ -213,9 +215,8 @@ export default {
       let op = event.target.getAttribute("op");
       if (type.toString() === globals.BTNTYPE.ZAHL.toString()) {
         this.value = event.target.getAttribute("value");
-        console.log("Hole neuen Value: " + this.value)
+        console.log("Hole neuen Value: " + this.value);
       }
-
       switch (type.toString()) {
         case globals.BTNTYPE.ZAHL.toString():
           console.log("Zahl wurde gedrückt");
@@ -223,52 +224,64 @@ export default {
             this.ergebnis = this.value;
           } else {
             if (this.OpActive) {
-              this.ergebnis = this.value
+              this.ergebnis = this.value;
+              this.OpActive = false;
             } else {
               this.ergebnis = this.ergebnis + this.value;
             }
           }
 
           break;
-
         case globals.BTNTYPE.FUNKTION.toString():
           console.log("Funktion wurde gedrückt");
           switch (op.toString()) {
             case globals.OP.CE.toString():
               console.log("CE");
               this.ergebnis = "0";
-              this.rechnung = "";
               this.value = 0;
               this.OpActive = false;
               break;
             case globals.OP.C.toString():
               console.log("C");
               this.ergebnis = "0";
+              this.rechnung = "";
               this.value = 0;
               break;
             case globals.OP.EQUALS.toString():
               console.log("=");
-              this.ergebnis = this.ergebnis
+              this.rechnung = this.rechnung + this.ergebnis;
+              this.ergebnis = math.evaluate(this.rechnung);
               this.rechnung = "";
               this.value = 0;
               break;
             case globals.OP.PLUS.toString():
               console.log("+");
               this.OpActive = true;
-              this.rechnung = this.rechnung + this.ergebnis + "+"
+              this.rechnung = this.rechnung + this.ergebnis + "+";
               break;
             case globals.OP.MINUS.toString():
               console.log("-");
               this.OpActive = true;
-              this.rechnung = this.rechnung + this.ergebnis + "-"
+              this.rechnung = this.rechnung + this.ergebnis + "-";
+              break;
+            case globals.OP.MAL.toString():
+              console.log("*");
+              this.OpActive = true;
+              this.rechnung = this.rechnung + this.ergebnis + "*";
+              break;
+            case globals.OP.GETEILT.toString():
+              console.log("/");
+              this.OpActive = true;
+              this.rechnung = this.rechnung + this.ergebnis + "/";
+              break;
+            case globals.OP.MINUSSIGN.toString():
+              console.log("/");
+              this.ergebnis = this.ergebnis * -1;
               break;
             default:
               break;
           }
           break;
-
-
-
 
         default:
           console.log("default");
@@ -316,15 +329,15 @@ export default {
 }
 .result {
   width: 99%;
-  heigth: 100%;
-  font-size: 24px;
+  height: 100%;
+  font-size: 22px;
   font-family: monospace;
   text-align: right;
 }
 .rechnung {
   width: 99%;
-  heigth: 100%;
-  font-size: 12px;
+  height: 100%;
+  font-size: 11px;
   font-family: monospace;
   text-align: right;
 }

@@ -3,15 +3,11 @@
 </template>
 
 <script>
-//import { globals } from "../../common/globals.js";
-
 export default {
   name: "CalcButton",
   props: { text: String },
   methods: {
-    // eslint-disable-next-line no-unused-vars
     onClick(event) {
-      console.log("->CalcButton.vue");
       this.$emit("calc-button-click", event);
     }
   }
@@ -37,7 +33,7 @@ export default {
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
-  heigth: 100%;
+  height: 99%;
 }
 
 .button:hover {
